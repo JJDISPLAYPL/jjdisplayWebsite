@@ -1,0 +1,192 @@
+#content{
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cont{
+    width: 100%;
+    display: flex;
+    padding: 3em 2em;
+    /* padding-top: 4em; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.cont::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 0;   
+}
+
+.img-wrapper-left {
+    z-index: 2;
+    height: fit-content;
+    margin-right: 5em;
+}
+
+.img-wrapper-right {
+    z-index: 2;
+    height: fit-content;
+    margin-left: 5em;
+}
+
+/* .img-wrapper-left > *{
+    height:fit-content;
+    margin: auto;
+} */
+
+@keyframes border-pulsate {
+    0%   { 
+        transform: scale(0.95); 
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+    70%  { 
+        transform: scale(1); 
+        box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+    }
+    100% { 
+        transform: scale(0.95); 
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.person-img {
+    display: flex;
+    object-fit: cover;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    animation: border-pulsate 2s infinite;
+}
+
+.person-img:hover {
+    opacity: 0.7;
+}
+
+.text-content {
+    z-index: 1;
+    padding: 2em;
+    background-color: rgba(255,255,255, 0.7);
+    border-radius: 0.3em;
+}
+
+.text-content > h2 {
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.text-content > h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.text-content:hover > h2::after {
+    transform: scaleX(1);
+}
+
+.text-content > p {
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.scrollFade {
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.scrollFade--visible {
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade--animate {
+    transition: opacity 0.4s ease-in-out;
+}
+
+.img-modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    padding-bottom: 3em;
+}
+
+.modal-content {
+    z-index: 10;
+    margin: auto;
+    display: block;
+    height: 100%;
+    width: auto;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    position: relative;
+}
+
+/* .img-modal::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: visible;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1;   
+} */
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 75px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer {
+    margin-bottom: 5em;
+}

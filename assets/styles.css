@@ -1,0 +1,511 @@
+:root {
+    --nav-bg-color: black;
+    --nav-hover-bg-color: black;
+    --nav-font-color: white;
+    --nav-hover-font-color: black;
+    --content-bg-color: darkslategray;
+    --lighter-content-bg-color: lightgray;
+    --card-bg-color: rgba(240, 248, 255, 0.8);
+    --card-fold-color: rgba(240, 248, 255, 0.9);
+    --transparent: rgba(0,0,0,0);
+    --button-color: #f6f3ed;
+    --button-highlight: #eceae7;
+    --bottom-bar-bg: black;
+    --bottom-bar-color: white;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@keyframes gradientFade {
+    0% {background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 2%, rgba(2,0,36,1) 100%)}
+    15% {background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 23%, rgba(2,0,36,1) 100%)}
+    30% {background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 45%, rgba(2,0,36,1) 100%)}
+    30% {background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 62%, rgba(2,0,36,1) 100%)}
+    30% {background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 76%, rgba(2,0,36,1) 100%)}
+    100% {background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 72%, rgba(186,186,186,1) 100%)}
+}
+
+#Logo {
+    height: 50px;
+}
+
+#wrapper{
+    margin-bottom: 0;
+    background-color: black;
+}
+
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+  
+#bottom{
+    justify-content: center;
+    text-align: center;
+    padding: 1% 2%;
+    background-color: var(--bottom-bar-bg);
+    color: var(--bottom-bar-color);
+}
+
+
+.contacts{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.row > a {
+    width: 50px;
+    height: 50px;
+    margin:auto;
+}
+
+.row{
+    width: 15%;
+    align-content: center;
+    padding: 0 30px 0px 30px;
+    margin: 2% 0 0 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7em;
+}
+
+.fineprint{
+    font-size: 0.6em;
+    color: var(--bottom-bar-color);
+    text-align: left;
+}
+
+
+a {
+    text-decoration: none;
+    width: 100%;
+    /* color: var(--nav-font-color); */
+}
+
+#particles{
+    position: absolute;
+    z-index: -1;
+    background-color: var(--nav-bg-color);
+    height: 114%;
+    width:100%;
+}
+
+#tsParticle{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 10;
+  }
+
+#BakaMitai{
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+#BakaMitai::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+#BakaMitai img{
+    display: block;
+    width:100%;
+    object-fit: contain;
+    z-index: -1;
+}
+
+#BakaMitai #label{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.96);
+    font-family: 'Noto Sans JP', sans-serif;
+    z-index: 1;
+    overflow: visible;
+    /* overflow-y: visible; */
+}
+
+#BakaMitai #AboutUs{
+    position: absolute;
+    bottom: 30%;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.96);
+    font-family: 'Noto Sans JP', sans-serif;
+    z-index: 1;
+    overflow: visible;
+    font-size: 1em;
+    font-weight: lighter;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* overflow-y: visible; */
+}
+
+@media screen and (min-width: 1200px) {
+    #BakaMitai #label {
+        font-size: 7em;
+        top: 20%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    #BakaMitai #label {
+        font-size: 5em;
+        top: 20%;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    #BakaMitai #label {
+        font-size: 3em;
+        top: 15%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #BakaMitai #label {
+        font-size: 2em;
+        top: 10%;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    #BakaMitai #AboutUs {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #BakaMitai #AboutUs {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 666px) {
+    #BakaMitai #AboutUs {
+        display: none;
+    }
+    #BakaMitai #label {
+        top: 40%;
+    }
+}
+
+#header{
+    position: fixed;
+    background-color: black;
+    box-shadow: 0 0.075rem 1rem 0 rgba(0, 0, 0, 0.125);
+    height: 4rem;
+    left: 0;
+    line-height: 3.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+#nav{
+    display: block;
+    color:var(--nav-font-color);
+    /* background-color: var(--nav-bg-color); */
+    width: 100%;
+}
+
+#heading{
+    margin-top: 4.2rem;
+}
+
+#nav > ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    width: 100%;
+}
+
+#nav > ul > li {
+     margin-left: 1em;
+     padding: 0.5em 1.5em;
+     margin-bottom: auto;
+     margin-top: auto;
+     color: var(--nav-font-color);
+     cursor: pointer;
+}
+
+#nav > ul > li > *{
+    /* background-color: var(--nav-bg-color) ; */
+    color: var(--nav-font-color); 
+    text-decoration: none;
+}
+
+/* Animations */
+
+#nav > ul > .mainItem:hover {
+    background-color: rgba(255,255,255,0.18);
+}
+
+/* Animation end */
+a :not(:hover){
+    color:inherit;
+}
+
+/* Dropdowns */
+
+#nav > ul > li > ul {
+    display: none;
+    border-radius: 0 0 0.2em 0.2em;
+    list-style: none;
+    background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(70,69,95,1) 19%, rgb(55, 55, 55) 100%);
+    transform: translateY(8px) translateX(-25px);
+    width: 180px;
+}
+
+#nav > ul > li:hover > ul{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    animation: fadeIn 0.5s;
+}
+
+#nav > ul > li > ul > li {
+    text-align: left;
+    transform: translateX(-20px);
+}
+
+#nav > ul > li > ul > li > *{
+    color: var(--nav-font-color); 
+    text-decoration: none;
+}
+
+#nav > ul > li > ul > li:hover::before{
+    display: inline-block;
+    width:auto;
+    content: "  ";    
+    position:relative;
+    animation-name: cursor;
+    animation-duration: 1.0s;
+    animation-iteration-count: infinite;
+}
+
+.mainItem::after{
+    display: block;
+    position: relative;
+    content: " ";
+    width: 100%;
+    height: 3px;
+    background-color: aliceblue;
+    transform: scaleX(0);
+}
+
+@keyframes Underline {
+    0%{transform: scaleX(0%);}
+    100%{transform: scaleX(100%);}
+}
+
+.mainItem:hover::after{
+    content:" ";
+    animation-name: Underline;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-fill-mode: forwards;  
+    /* animation-iteration-count: 1; */
+}
+
+.parallaxBackground{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contentHeader {
+    background-color: #263f3fb9;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 2.4em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 15px; /* updown leftright */
+    position: sticky;
+    top: 70px;
+    z-index: 20;
+}
+
+.contentHeader + div {
+    padding-top: 50px;
+}
+
+#content{
+    text-align: justify;
+    font-family: 'Noto Sans JP', sans-serif;
+    /* background-color: var(--lighter-content-bg-color); */
+    background-image: url("../pictures/b.jpg") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+}
+
+.productInfo {
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productInfo > div {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.itemCard {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.itemCard > .imgDiv > img{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.itemCard > .imgDiv {
+    order: 2;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.subCard{
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg-color);
+}
+
+.itemCard:nth-child(even) > .subCard{
+    order: 3;
+    margin-right: 0;
+    position: relative;
+    right: -10px;
+}
+
+.itemCard:nth-child(even) > .subCard::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 0 0 16px 16px;
+    border-style: solid;
+    border-color: var(--card-fold-color) var(--lighter-content-bg-color);
+}
+
+
+.itemCard:nth-child(odd) > .subCard {
+    order: 1;
+    margin-left: 0;
+    position: relative;
+    left: -10px;
+}
+
+
+.itemCard:nth-child(odd) > .subCard::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: var(--card-fold-color) var(--lighter-content-bg-color);
+}
+
+
+.cardHeader {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    margin-top: 1px;
+}
+
+.cardContents {
+    font-size: 1em;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.buttonContainer {
+    margin: 20px;
+}
+
+a.button{
+    color: black;
+    padding: 8px;
+    background-color: var(--button-color);
+    margin: 1em 0;
+    text-decoration: none;
+}
+
+a.button::after {
+    display: inline-block;
+    padding-left: 8px;
+    content: "\0279E";
+    -webkit-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    -ms-transition: transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+a.button:hover{
+    background-color: var(--button-highlight);
+}
+
+a.button:hover::after{
+    -webkit-transform: translateX(3px);
+    -moz-transform: translateX(3px);
+    -ms-transform: translateX(3px);
+    -o-transform: translateX(3px);
+    transform: translateX(3px);
+}
